@@ -1,0 +1,348 @@
+/* Import Google Fonts for fallback */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap');
+
+/* App Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Avenir', 'Helvetica', 'Arial', sans-serif;
+  background-color: #ffffff;
+  color: #333;
+}
+
+/* Typography Classes following the design specs */
+.title-main {
+  font-family: 'Avenir', 'Helvetica', 'Arial', sans-serif;
+  font-weight: 400; /* Avenir Book */
+  font-size: 45px;
+  color: #333;
+  text-align: center;
+  margin: 60px 0 50px 0 !important;
+  width: 100%;
+  padding: 0;
+}
+
+.product-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500; /* Medium */
+  font-size: 15px;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.product-price {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400; /* Regular */
+  font-size: 15px;
+  color: #000000;
+  margin-bottom: 8px;
+}
+
+.color-name {
+  font-family: 'Avenir', 'Helvetica', 'Arial', sans-serif;
+  font-weight: 400; /* Avenir Book */
+  font-size: 12px;
+  color: #000000;
+  margin: 0 0 12px 0;
+}
+
+.star-rating {
+  font-family: 'Avenir', 'Helvetica', 'Arial', sans-serif;
+  font-weight: 400; /* Avenir Book */
+  font-size: 14px;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 4px;
+  line-height: 1;
+}
+
+/* Container - Better Centered Layout */
+.app-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Product Carousel */
+.products-carousel-container {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto 50px auto;
+  position: relative;
+  padding: 0 80px;
+}
+
+.products-swiper {
+  padding: 20px 0 60px 0;
+}
+
+.products-swiper .swiper-slide {
+  height: auto;
+  display: flex;
+  justify-content: center;
+}
+
+/* Custom Navigation Buttons - Chevron Icons */
+.custom-swiper-button-prev,
+.custom-swiper-button-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #000;
+  cursor: pointer;
+  z-index: 100;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+}
+
+.custom-swiper-button-prev svg,
+.custom-swiper-button-next svg {
+  width: 32px;
+  height: 32px;
+}
+
+.custom-swiper-button-prev {
+  left: -60px;
+}
+
+.custom-swiper-button-next {
+  right: -60px;
+}
+
+.custom-swiper-button-prev:hover,
+.custom-swiper-button-next:hover {
+  color: #666;
+  transform: translateY(-50%) scale(1.2);
+}
+
+/* Swiper Pagination */
+.products-swiper .swiper-pagination {
+  bottom: 10px;
+}
+
+.products-swiper .swiper-pagination-bullet {
+  background: #333;
+  opacity: 0.3;
+}
+
+.products-swiper .swiper-pagination-bullet-active {
+  opacity: 1;
+  background: #333;
+}
+
+/* Swiper Scrollbar */
+.products-swiper .swiper-scrollbar {
+  background: #d8d8d8;
+  height: 12px;
+  border-radius: 4px;
+  bottom: 30px;
+}
+
+.products-swiper .swiper-scrollbar-drag {
+  background: #adadad;
+  border-radius: 4px;
+}
+
+/* Product Card - Clean Style */
+.product-card {
+  background: none;
+  border: none;
+  width: 100%;
+  max-width: 350px;
+  margin: 0 auto;
+  padding: 0 5px;
+}
+
+/* Product Image Container */
+.product-image-container {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+  background: none;
+  margin-bottom: 15px;
+  border-radius: 12px;
+}
+
+.product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* Product Info */
+.product-info {
+  padding: 0;
+  text-align: left;
+}
+
+/* Color Picker */
+.color-picker {
+  display: flex;
+  gap: 8px;
+  margin: 12px 0 8px 0;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.color-option {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #ddd;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  box-shadow: none;
+}
+
+.color-option.active {
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 0.5px #000;
+  transform: scale(1.1);
+}
+
+.color-option:hover {
+  transform: scale(1.1);
+}
+
+.color-option.yellow {
+  background: #E6CA97;
+}
+
+.color-option.rose {
+  background: #E1A4A9;
+}
+
+.color-option.white {
+  background: #D9D9D9;
+}
+
+/* Star Rating */
+.stars-container {
+  margin-right: 5px;
+  font-size: 16px;
+  line-height: 1;
+  vertical-align: middle;
+}
+
+.stars-filled {
+  color: #f6d5a8;
+}
+
+.stars-empty {
+  color: #d9d9d9;
+}
+
+/* Loading and Error States */
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  font-size: 18px;
+  color: #666;
+}
+
+.error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  font-size: 18px;
+  color: #e74c3c;
+  text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .title-main {
+    font-size: 32px;
+    margin: 40px 0 30px 0 !important;
+  }
+  
+  .app-container {
+    padding: 0 20px;
+  }
+  
+  .product-card {
+    padding: 0 10px;
+  }
+  
+  .product-image-container {
+    height: 200px;
+  }
+  
+  .product-info {
+    padding: 0;
+  }
+  
+  /* Carousel responsive adjustments */
+  .products-carousel-container {
+    padding: 0 60px;
+  }
+  
+  .custom-swiper-button-prev svg,
+  .custom-swiper-button-next svg {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .custom-swiper-button-prev {
+    left: -50px;
+  }
+
+  .custom-swiper-button-next {
+    right: -50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title-main {
+    font-size: 28px;
+  }
+  
+  .product-card {
+    padding: 0 8px;
+  }
+  
+  .product-image-container {
+    height: 220px;
+  }
+  
+  /* Adjust carousel for mobile */
+  .products-carousel-container {
+    margin-bottom: 30px;
+    padding: 0 50px;
+  }
+  
+  .custom-swiper-button-prev svg,
+  .custom-swiper-button-next svg {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .custom-swiper-button-prev {
+    left: -40px;
+  }
+
+  .custom-swiper-button-next {
+    right: -40px;
+  }
+}
