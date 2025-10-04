@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import ProductCard from './components/ProductCard';
 import { Product, ApiResponse } from './types';
@@ -21,7 +21,7 @@ const App: React.FC = () => {
     ? ''
     : 'http://localhost:5000';
 
-  const fetchProducts = useCallback(async () => {
+  const fetchProducts = async () => {
     try {
       setLoading(true);
       setError(null);
@@ -47,11 +47,11 @@ const App: React.FC = () => {
     } finally {
       setLoading(false);
     }
-  }, [API_BASE_URL]);
+  };
 
   useEffect(() => {
     fetchProducts();
-  }, [fetchProducts]);
+  }, []);
 
   if (loading) {
     return (
